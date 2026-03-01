@@ -65,7 +65,7 @@ Template available at `~/.claude/templates/CONVENTIONS.md`.
 | `/prd` | Create PRD through guided questioning |
 | `/prd-review` | Validate PRD completeness (11 criteria) |
 | `/feature-spec` | Refine a single PRD feature into detailed implementation spec |
-| `/feature-review` | Review feature spec against quality criteria, PRD alignment, and codebase consistency |
+| `/feature-review` | Validate feature spec quality (8 criteria) before task generation |
 | `/feature-to-tasks` | Generate TDD-structured task list from a feature spec |
 | `/prd-to-tasks` | Generate fix_plan.md from whole PRD (legacy, ralph-compatible) |
 | `/task-review` | Validate task list quality and PRD coverage |
