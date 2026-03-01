@@ -1,0 +1,38 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lint-python.sh",
+            "timeout": 15000
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/typecheck-python.sh",
+            "timeout": 30000
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lint-typescript.sh",
+            "timeout": 15000
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/block-protected-files.sh",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}
