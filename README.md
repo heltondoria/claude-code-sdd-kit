@@ -11,8 +11,8 @@ The pipeline enforces: **PRD first, then spec, then tasks, then TDD implementati
 ## Pipeline
 
 ```
-/prd  ->  /prd-review  ->  /feature-spec  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review
-                                (per feature)                           (TDD RED-GREEN)
+/prd  ->  /prd-review  ->  /feature-spec  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review
+                                (per feature)                              (TDD RED-GREEN)
 ```
 
 There's also a legacy whole-PRD flow for simpler projects:
@@ -23,13 +23,14 @@ There's also a legacy whole-PRD flow for simpler projects:
 
 ## Contents
 
-### Skills (10)
+### Skills (11)
 
 | Skill | Purpose |
 |-------|---------|
 | `/prd` | Create a PRD through guided questioning |
 | `/prd-review` | Validate PRD completeness (11 criteria) |
 | `/feature-spec` | Refine a single PRD feature into a detailed implementation spec |
+| `/feature-review` | Review feature spec against quality criteria, PRD alignment, and codebase consistency |
 | `/feature-to-tasks` | Generate TDD-structured task list (RED-GREEN pairs) from a feature spec |
 | `/prd-to-tasks` | Generate task list from whole PRD (legacy flow) |
 | `/task-review` | Validate task list quality, TDD structure, and spec/PRD coverage |

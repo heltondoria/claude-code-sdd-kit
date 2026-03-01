@@ -22,7 +22,7 @@ This is the global CLAUDE.md for all projects. It provides baseline guidance tha
 ## Development Philosophy
 
 - **Specification-Driven Development (SDD)**: PRD first, then tasks, then TDD implementation
-- **Pipeline**: `/prd` -> `/prd-review` -> `/feature-spec` (per feature) -> `/feature-to-tasks` -> `/task-review` -> implement (TDD with hooks) -> `/quality-gates` -> `/impl-review`
+- **Pipeline**: `/prd` -> `/prd-review` -> `/feature-spec` (per feature) -> `/feature-review` -> `/feature-to-tasks` -> `/task-review` -> implement (TDD with hooks) -> `/quality-gates` -> `/impl-review`
 - **Legacy pipeline** (whole-PRD, no feature specs): `/prd` -> `/prd-review` -> `/prd-to-tasks` -> `/task-review` -> implement -> `/quality-gates` -> `/impl-review`
 - **Short, verifiable tasks**: Each task must be deterministic, verifiable, objective, and atomic
 - **TDD**: Write tests alongside or before implementation for early feedback
@@ -65,6 +65,7 @@ Template available at `~/.claude/templates/CONVENTIONS.md`.
 | `/prd` | Create PRD through guided questioning |
 | `/prd-review` | Validate PRD completeness (11 criteria) |
 | `/feature-spec` | Refine a single PRD feature into detailed implementation spec |
+| `/feature-review` | Review feature spec against quality criteria, PRD alignment, and codebase consistency |
 | `/feature-to-tasks` | Generate TDD-structured task list from a feature spec |
 | `/prd-to-tasks` | Generate fix_plan.md from whole PRD (legacy, ralph-compatible) |
 | `/task-review` | Validate task list quality and PRD coverage |
