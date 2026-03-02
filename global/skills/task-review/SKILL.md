@@ -1,13 +1,13 @@
 ---
 name: task-review
 description: Validate a task list for quality, completeness, TDD structure, and alignment with its source spec or PRD
-argument-hint: <path-to-fix-plan> [path-to-spec-or-prd] (e.g., ".ralph/fix_plan.md .specs/F6-task-export.md")
+argument-hint: <path-to-fix-plan> [path-to-spec-or-prd] (e.g., ".ralph/fix_plan-F6.md .specs/F6-task-export.md")
 disable-model-invocation: true
 ---
 
 # Task Review
 
-Validate a task list (typically `.ralph/fix_plan.md`) against quality criteria and its source document (feature spec or PRD) to ensure all requirements are covered, tasks are well-formed, and TDD structure is correct.
+Validate a task list (typically `.ralph/fix_plan-F{N}.md`) against quality criteria and its source document (feature spec or PRD) to ensure all requirements are covered, tasks are well-formed, and TDD structure is correct.
 
 ## Input
 
@@ -15,7 +15,7 @@ Arguments from command: `$ARGUMENTS`
 
 Expected format: `<fix-plan-path> [spec-or-prd-path]`
 
-- If no arguments: look for `.ralph/fix_plan.md` and try to detect the source document
+- If no arguments: look for `.ralph/fix_plan-*.md` files and try to detect the source document
 - If only fix plan provided: search for the source it was generated from
 
 ### Source Detection

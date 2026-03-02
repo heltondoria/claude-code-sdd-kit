@@ -198,15 +198,15 @@ Implementation is minimal — just enough to make the tests pass.
 
 ## Output Location
 
-Write the generated task list to: `.ralph/fix_plan.md` in the workspace root.
+Write the generated task list to: `.ralph/fix_plan-F{N}.md` in the workspace root, where `F{N}` is the feature ID extracted from the spec header (e.g., `F6`, `F7`).
+
+Examples:
+- `.specs/F6-task-export.md` → `.ralph/fix_plan-F6.md`
+- `.specs/F7-scope-management.md` → `.ralph/fix_plan-F7.md`
 
 If `.ralph/` directory does not exist, create it.
 
 If the user specifies a different output path, use that instead.
-
-If `.ralph/fix_plan.md` already exists, ask the user whether to:
-- **Append** — add the new feature's tasks after existing content
-- **Replace** — overwrite with only this feature's tasks
 
 ## Rules
 

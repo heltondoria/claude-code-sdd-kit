@@ -23,7 +23,6 @@ This is the global CLAUDE.md for all projects. It provides baseline guidance tha
 
 - **Specification-Driven Development (SDD)**: PRD first, then tasks, then TDD implementation
 - **Pipeline**: `/prd` -> `/prd-review` -> `/feature-spec` (per feature) -> `/feature-review` -> `/feature-to-tasks` -> `/task-review` -> implement (TDD with hooks) -> `/quality-gates` -> `/impl-review`
-- **Legacy pipeline** (whole-PRD, no feature specs): `/prd` -> `/prd-review` -> `/prd-to-tasks` -> `/task-review` -> implement -> `/quality-gates` -> `/impl-review`
 - **Short, verifiable tasks**: Each task must be deterministic, verifiable, objective, and atomic
 - **TDD**: Write tests alongside or before implementation for early feedback
 - **Strict linting on every edit**: Hooks auto-lint and type-check after every file save
@@ -67,10 +66,9 @@ Template available at `~/.claude/templates/CONVENTIONS.md`.
 | `/feature-spec` | Refine a single PRD feature into detailed implementation spec |
 | `/feature-review` | Validate feature spec quality (8 criteria) before task generation |
 | `/feature-to-tasks` | Generate TDD-structured task list from a feature spec |
-| `/prd-to-tasks` | Generate fix_plan.md from whole PRD (legacy, ralph-compatible) |
-| `/task-review` | Validate task list quality and PRD coverage |
+| `/task-review` | Validate task list quality and spec coverage |
 | `/quality-gates` | Run all quality checks and report pass/fail |
-| `/impl-review` | Validate implementation against PRD with scoring |
+| `/impl-review` | Validate implementation against feature spec with scoring |
 | `/scaffold` | Create new project with full tooling setup |
 | `/adopt` | Migrate existing project to unified tooling standards |
 
