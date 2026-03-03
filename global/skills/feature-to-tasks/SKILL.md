@@ -9,7 +9,7 @@ disable-model-invocation: true
 
 Generate a TDD-structured implementation plan from a feature specification document (produced by `/feature-spec`). Each feature method becomes a red-green cycle: write the failing test first, then implement until it passes.
 
-**Pipeline position**: `/prd` -> `/prd-review` -> `/feature-spec` -> **`/feature-to-tasks`** -> `/task-review` -> implement
+**Pipeline position**: `/discovery` (optional) -> `/discovery-review` -> `/prd` -> `/prd-review` -> `/feature-spec` -> **`/feature-to-tasks`** -> `/task-review` -> implement
 
 ## Input
 

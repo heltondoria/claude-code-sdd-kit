@@ -6,21 +6,23 @@ Specification-Driven Development toolkit for [Claude Code](https://claude.ai/cod
 
 A curated set of Claude Code configuration files that implement a full **Specification-Driven Development (SDD)** pipeline. Copy these into your `~/.claude/` directory to get a structured workflow for turning ideas into tested, production-quality code.
 
-The pipeline enforces: **PRD first, then spec, then tasks, then TDD implementation** — with quality gates at every step.
+The pipeline enforces: **Discovery (optional), then PRD, then spec, then tasks, then TDD implementation** — with quality gates at every step.
 
 ## Pipeline
 
 ```
-/prd  ->  /prd-review  ->  /feature-spec  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review
-                                (per feature)                              (TDD RED-GREEN)
+/discovery (optional)  ->  /discovery-review  ->  /prd  ->  /prd-review  ->  /feature-spec  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review
+        (WHY)                                                                 (per feature)                              (TDD RED-GREEN)
 ```
 
 ## Contents
 
-### Skills (10)
+### Skills (12)
 
 | Skill | Purpose |
 |-------|---------|
+| `/discovery` | Discover the WHY behind a project (Golden Circle) |
+| `/discovery-review` | Validate discovery document completeness (6 criteria) |
 | `/prd` | Create a PRD through guided questioning |
 | `/prd-review` | Validate PRD completeness (11 criteria) |
 | `/feature-spec` | Refine a single PRD feature into a detailed implementation spec |
@@ -61,22 +63,19 @@ The pipeline enforces: **PRD first, then spec, then tasks, then TDD implementati
 
 ## Installation
 
-Copy the `global/` contents into your Claude Code config directory:
-
 ```bash
-# Back up existing config
-cp -r ~/.claude ~/.claude.bak
-
-# Copy everything
-cp global/CLAUDE.md ~/.claude/CLAUDE.md
-cp global/settings.json ~/.claude/settings.json
-cp -r global/skills/* ~/.claude/skills/
-cp -r global/hooks/* ~/.claude/hooks/
-cp -r global/agents/* ~/.claude/agents/
-cp -r global/templates/* ~/.claude/templates/
+git clone https://github.com/heltonmc/claude-code-sdd-kit.git
+cd claude-code-sdd-kit
+bash install.sh
 ```
 
-Or selectively pick the pieces you need.
+The script automatically backs up your existing `~/.claude/` (if any), copies all components, and prints a summary of what was installed.
+
+To update, just `git pull && bash install.sh`.
+
+> **Windows**: run the script inside WSL or Git Bash. Claude Code requires a Unix-like shell, so these environments are already expected.
+
+> **Selective install**: you can also copy individual files from `global/` manually — the script is just a convenience wrapper around `cp`.
 
 ## Supported Stacks
 
