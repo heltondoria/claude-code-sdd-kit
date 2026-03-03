@@ -19,9 +19,12 @@ Initial request: $ARGUMENTS
 **Goal**: Understand the developer's idea at a high level
 
 **Actions**:
-1. If no initial description provided, introduce yourself and ask about their app idea
-2. Create a todo list to track the PRD creation process
-3. Begin gathering information through conversational questions
+1. Before starting the conversation, search for `DISCOVERY-*.md` files in the current workspace.
+   - **If found**: Read the discovery document and use it as context. Pre-populate your understanding of the WHY (problem, audience, purpose), the WHAT (vision, outcomes), and the HOW (strategic approach, success criteria). Acknowledge the discovery document to the user: "I found your discovery document — I'll use it as a foundation so we can skip questions you've already answered and focus on requirements."
+   - **If not found**: Proceed normally — discovery is optional.
+2. If no initial description provided, introduce yourself and ask about their app idea
+3. Create a todo list to track the PRD creation process
+4. Begin gathering information through conversational questions (skip questions already answered by the discovery document)
 
 ---
 
@@ -156,10 +159,9 @@ For each feature include:
 - Authorization rules
 - Data protection
 
-## 8. Development Phases/Milestones
-- Phase 1: MVP (features, timeline goals)
-- Phase 2: Enhanced (features)
-- Phase 3: Scale (features)
+## 8. Implementation Order
+- Recommended implementation sequence (respecting feature dependencies)
+- Each feature is self-contained — no partial features or "deferred to phase N"
 
 ## 9. Potential Challenges and Solutions
 - Technical challenges
