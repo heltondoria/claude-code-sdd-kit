@@ -223,3 +223,10 @@ If the user specifies a different output path, use that instead.
 ## Tone
 
 Be precise and mechanical. Every task must be unambiguous — an AI agent should execute each task without interpretation or judgment calls. The RED-GREEN structure makes the workflow self-correcting: if a GREEN task doesn't pass the RED tests, the agent knows immediately.
+
+## Commit
+
+Commit the generated task list:
+- Type: `docs`
+- Scope: feature ID (e.g., `F6`)
+- Example: `docs(F6): generate task list for <feature-slug>`

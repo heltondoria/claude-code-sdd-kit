@@ -199,3 +199,10 @@ If the user specifies a different output path, use that instead.
 ## Tone
 
 Be precise and mechanical. Every task must be unambiguous — another developer (or an AI agent) should be able to execute each task without interpretation or judgment calls.
+
+## Commit
+
+Commit the generated task list:
+- Type: `docs`
+- Scope: `prd`
+- Example: `docs(prd): generate task list for <project-name>`

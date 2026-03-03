@@ -49,6 +49,12 @@ The pipeline enforces: **Discovery (optional), then PRD, then spec, then tasks, 
 |-------|---------|
 | `convention-checker` | Check code against project `CONVENTIONS.md` rules |
 
+### Scripts (1)
+
+| Script | Purpose |
+|--------|---------|
+| `sdd-metrics.py` | Extract pipeline metrics from git history (conventional commits with feature ID scopes) |
+
 ### Templates (7)
 
 | Template | Purpose |
@@ -76,6 +82,19 @@ To update, just `git pull && bash install.sh`.
 > **Windows**: run the script inside WSL or Git Bash. Claude Code requires a Unix-like shell, so these environments are already expected.
 
 > **Selective install**: you can also copy individual files from `global/` manually — the script is just a convenience wrapper around `cp`.
+
+## Pipeline Metrics
+
+After using the SDD pipeline with conventional commits, extract metrics:
+
+```bash
+python ~/.claude/scripts/sdd-metrics.py              # Full report
+python ~/.claude/scripts/sdd-metrics.py --json        # JSON output
+python ~/.claude/scripts/sdd-metrics.py --feature F6  # Single feature
+python ~/.claude/scripts/sdd-metrics.py --period 2026-01-01:2026-03-03
+```
+
+Requires Python 3.10+ (stdlib only, no external dependencies).
 
 ## Supported Stacks
 

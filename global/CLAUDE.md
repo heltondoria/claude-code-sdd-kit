@@ -89,11 +89,50 @@ Template available at `~/.claude/templates/CONVENTIONS.md`.
 - `docs/description` — Documentation
 
 ### Commit Messages
+
+Follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/):
+
 ```
 type(scope): short description
 
 type: feat, fix, refactor, test, docs, chore
+scope: feature ID (F1, F6), discovery, prd, scaffold, adopt, or module name
 ```
+
+See **Auto-Commit Convention** below for pipeline-specific commit format.
+
+## Auto-Commit Convention
+
+Before executing any skill, ensure the workspace is a git repository.
+If not, initialize one (`git init`) and create an initial commit with existing files.
+
+After any skill that creates or modifies files in the workspace, create a git commit
+following the Conventional Commits format below. Do NOT commit if the skill only
+produced console output (reviews, quality gates).
+
+### Commit Format for Pipeline Artifacts
+
+| Skill | Type | Scope | Example |
+|-------|------|-------|---------|
+| `/discovery` | `docs` | `discovery` | `docs(discovery): create discovery for project-name` |
+| `/prd` | `docs` | `prd` | `docs(prd): create PRD for project-name` |
+| `/feature-spec` | `docs` | `F{n}` | `docs(F6): generate feature spec for task-export` |
+| `/feature-to-tasks` | `docs` | `F{n}` | `docs(F6): generate task list for task-export` |
+| `/scaffold` | `chore` | `scaffold` | `chore(scaffold): create project structure` |
+| `/adopt` | `chore` | `adopt` | `chore(adopt): migrate to unified tooling standards` |
+| Implementation | `feat` | `F{n}` | `feat(F6): implement task export service` |
+| Tests | `test` | `F{n}` | `test(F6): add task export service tests` |
+| Fixes | `fix` | `F{n}` | `fix(F6): correct export encoding` |
+| Refactoring | `refactor` | `F{n}` | `refactor(F6): extract export strategy` |
+| Spec revision | `docs` | `F{n}` | `docs(F6): revise feature spec after review findings` |
+
+This convention enables full traceability: `git log --grep="F6"` shows the complete
+lifecycle of a feature from spec to implementation to fixes.
+
+## Metrics
+
+Run `python ~/.claude/scripts/sdd-metrics.py` to extract pipeline metrics from git history.
+Requires conventional commits with feature ID scopes (e.g., `feat(F6): ...`).
 
 ## Platform
 

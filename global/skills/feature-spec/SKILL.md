@@ -335,3 +335,10 @@ The primary output is the feature spec file. The user then runs:
 ## Tone
 
 Be precise and analytical. The spec is a technical contract — every statement should be verifiable against the codebase. When making design decisions, always explain the rationale and what alternatives were rejected.
+
+## Commit
+
+Commit the generated feature spec:
+- Type: `docs`
+- Scope: feature ID (e.g., `F6`)
+- Example: `docs(F6): generate feature spec for <feature-slug>`
