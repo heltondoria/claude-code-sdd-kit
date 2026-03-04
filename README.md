@@ -11,19 +11,20 @@ The pipeline enforces: **Discovery (optional), then PRD, then spec, then tasks, 
 ## Pipeline
 
 ```
-/discovery (optional)  ->  /discovery-review  ->  /prd  ->  /prd-review  ->  /feature-spec  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review  ->  /release
-        (WHY)                                                                 (per feature)                              (TDD RED-GREEN)                                                              (semver)
+/discovery (optional)  ->  /discovery-review  ->  /prd or /prd-import  ->  /prd-review  ->  /feature-spec  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review  ->  /release
+        (WHY)                                                                      (per feature)                              (TDD RED-GREEN)                                                              (semver)
 ```
 
 ## Contents
 
-### Skills (13)
+### Skills (14)
 
 | Skill | Purpose |
 |-------|---------|
 | `/discovery` | Discover the WHY behind a project (Golden Circle) |
 | `/discovery-review` | Validate discovery document completeness (6 criteria) |
 | `/prd` | Create a PRD through guided questioning |
+| `/prd-import` | Import an external PRD into the SDD format without content loss |
 | `/prd-review` | Validate PRD completeness (11 criteria) |
 | `/feature-spec` | Refine a single PRD feature into a detailed implementation spec |
 | `/feature-review` | Review feature spec against quality criteria, PRD alignment, and codebase consistency |

@@ -22,7 +22,7 @@ This is the global CLAUDE.md for all projects. It provides baseline guidance tha
 ## Development Philosophy
 
 - **Specification-Driven Development (SDD)**: PRD first, then tasks, then TDD implementation
-- **Pipeline**: `/discovery` (optional) -> `/discovery-review` -> `/prd` -> `/prd-review` -> `/feature-spec` (per feature) -> `/feature-review` -> `/feature-to-tasks` -> `/task-review` -> implement (TDD with hooks) -> `/quality-gates` -> `/impl-review` -> `/release`
+- **Pipeline**: `/discovery` (optional) -> `/discovery-review` -> `/prd` | `/prd-import` -> `/prd-review` -> `/feature-spec` (per feature) -> `/feature-review` -> `/feature-to-tasks` -> `/task-review` -> implement (TDD with hooks) -> `/quality-gates` -> `/impl-review` -> `/release`
 - **Short, verifiable tasks**: Each task must be deterministic, verifiable, objective, and atomic
 - **TDD**: Write tests alongside or before implementation for early feedback
 - **Strict linting on every edit**: Hooks auto-lint and type-check after every file save
@@ -65,6 +65,7 @@ Template available at `~/.claude/templates/CONVENTIONS.md`.
 | `/discovery` | Discover the WHY behind a project (Golden Circle) |
 | `/discovery-review` | Validate discovery document completeness (6 criteria) |
 | `/prd` | Create PRD through guided questioning |
+| `/prd-import` | Import an external PRD into the SDD format without content loss |
 | `/prd-review` | Validate PRD completeness (11 criteria) |
 | `/feature-spec` | Refine a single PRD feature into detailed implementation spec |
 | `/feature-review` | Validate feature spec quality (8 criteria) before task generation |
