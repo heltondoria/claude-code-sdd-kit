@@ -11,13 +11,13 @@ The pipeline enforces: **Discovery (optional), then PRD, then spec, then tasks, 
 ## Pipeline
 
 ```
-/discovery (optional)  ->  /discovery-review  ->  /prd  ->  /prd-review  ->  /feature-spec  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review
-        (WHY)                                                                 (per feature)                              (TDD RED-GREEN)
+/discovery (optional)  ->  /discovery-review  ->  /prd  ->  /prd-review  ->  /feature-spec  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review  ->  /release
+        (WHY)                                                                 (per feature)                              (TDD RED-GREEN)                                                              (semver)
 ```
 
 ## Contents
 
-### Skills (12)
+### Skills (13)
 
 | Skill | Purpose |
 |-------|---------|
@@ -31,6 +31,7 @@ The pipeline enforces: **Discovery (optional), then PRD, then spec, then tasks, 
 | `/task-review` | Validate task list quality, TDD structure, and spec coverage |
 | `/quality-gates` | Run all quality checks and report pass/fail |
 | `/impl-review` | Validate implementation against feature spec with scoring |
+| `/release` | Create a semver release with version bump, changelog, and git tag |
 | `/scaffold` | Create new project with full tooling setup |
 | `/adopt` | Migrate existing project to unified tooling standards |
 

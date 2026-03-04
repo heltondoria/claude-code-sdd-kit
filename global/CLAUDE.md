@@ -22,7 +22,7 @@ This is the global CLAUDE.md for all projects. It provides baseline guidance tha
 ## Development Philosophy
 
 - **Specification-Driven Development (SDD)**: PRD first, then tasks, then TDD implementation
-- **Pipeline**: `/discovery` (optional) -> `/discovery-review` -> `/prd` -> `/prd-review` -> `/feature-spec` (per feature) -> `/feature-review` -> `/feature-to-tasks` -> `/task-review` -> implement (TDD with hooks) -> `/quality-gates` -> `/impl-review`
+- **Pipeline**: `/discovery` (optional) -> `/discovery-review` -> `/prd` -> `/prd-review` -> `/feature-spec` (per feature) -> `/feature-review` -> `/feature-to-tasks` -> `/task-review` -> implement (TDD with hooks) -> `/quality-gates` -> `/impl-review` -> `/release`
 - **Short, verifiable tasks**: Each task must be deterministic, verifiable, objective, and atomic
 - **TDD**: Write tests alongside or before implementation for early feedback
 - **Strict linting on every edit**: Hooks auto-lint and type-check after every file save
@@ -72,6 +72,7 @@ Template available at `~/.claude/templates/CONVENTIONS.md`.
 | `/task-review` | Validate task list quality and spec coverage |
 | `/quality-gates` | Run all quality checks and report pass/fail |
 | `/impl-review` | Validate implementation against feature spec with scoring |
+| `/release` | Create a semver release with version bump, changelog, and git tag |
 | `/scaffold` | Create new project with full tooling setup |
 | `/adopt` | Migrate existing project to unified tooling standards |
 
@@ -127,6 +128,7 @@ produced console output (reviews, quality gates).
 | Fixes | `fix` | `F{n}` | `fix(F6): correct export encoding` |
 | Refactoring | `refactor` | `F{n}` | `refactor(F6): extract export strategy` |
 | Spec revision | `docs` | `F{n}` | `docs(F6): revise feature spec after review findings` |
+| `/release` | `chore` | `release` | `chore(release): bump version 1.2.3 → 1.3.0` |
 
 This convention enables full traceability: `git log --grep="F6"` shows the complete
 lifecycle of a feature from spec to implementation to fixes.
