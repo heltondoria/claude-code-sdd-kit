@@ -83,7 +83,7 @@ Each task must be:
 
 ```markdown
 - [ ] Write failing tests for `method_name` in `tests/<test_file>.py` -- Test scenarios: <list from § 6 that target this method>. Assert signatures, return types, exceptions. Tests must FAIL (RED) because the method does not exist yet.
-- [ ] Implement `method_name` in `src/<package>/<file>.py` -- <signature from § 4>. <behavior summary>. All tests from previous task must PASS (GREEN).
+- [ ] Implement `method_name` in `src/<package>/<file>.py` -- <signature from § 4>. <behavior summary>. All tests from previous task must PASS (GREEN). After GREEN, commit: `feat(F{N}): implement method_name`
 ```
 
 **The RED task always comes before the GREEN task.** This ensures:
@@ -115,16 +115,16 @@ Each task must be:
 [For each method, a RED-GREEN pair]
 
 - [ ] RED: Write failing tests for `method_a` in `tests/test_<module>.py` -- Scenarios: <list>
-- [ ] GREEN: Implement `method_a` in `src/<package>/<module>.py` -- <signature, behavior>
+- [ ] GREEN: Implement `method_a` in `src/<package>/<module>.py` -- <signature, behavior>. After GREEN, commit: `feat(F{N}): implement method_a`
 - [ ] RED: Write failing tests for `method_b` in `tests/test_<module>.py` -- Scenarios: <list>
-- [ ] GREEN: Implement `method_b` in `src/<package>/<module>.py` -- <signature, behavior>
+- [ ] GREEN: Implement `method_b` in `src/<package>/<module>.py` -- <signature, behavior>. After GREEN, commit: `feat(F{N}): implement method_b`
 - [ ] Run full quality gates: `<all gates>`
 
 ### Phase 3: Integration — API & Wiring
 
 - [ ] <REST endpoint / MCP tool / DI wiring tasks>
 - [ ] RED: Write integration tests in `tests/test_<integration>.py` -- <scenarios>
-- [ ] GREEN: Wire endpoints/tools to pass integration tests
+- [ ] GREEN: Wire endpoints/tools to pass integration tests. After GREEN, commit: `feat(F{N}): wire <endpoint/tool>`
 - [ ] Run full quality gates: `<all gates>`
 
 ## Medium Priority
@@ -133,9 +133,9 @@ Each task must be:
 
 - [ ] Define event schemas in `src/<package>/events/<file>.py` -- <schema names from § 9.3>
 - [ ] RED: Write event producer tests -- <verify events are emitted on triggers from § 9.1>
-- [ ] GREEN: Implement event publishing in service methods
+- [ ] GREEN: Implement event publishing in service methods. After GREEN, commit: `feat(F{N}): add event publishing`
 - [ ] RED: Write event consumer tests -- <verify handlers process events idempotently from § 9.2>
-- [ ] GREEN: Implement event consumer handlers
+- [ ] GREEN: Implement event consumer handlers. After GREEN, commit: `feat(F{N}): add event consumers`
 - [ ] Run full quality gates: `<all gates>`
 
 ### Phase 5: Frontend (if applicable)
@@ -185,6 +185,7 @@ Implementation is minimal — just enough to make the tests pass.
 - Include the full method signature from § 4
 - Reference "all tests from previous RED task must pass"
 - Do NOT add new test scenarios in GREEN tasks — tests were already written
+- **Include a commit directive** — after tests pass, commit with conventional commit format using the feature scope (e.g., `feat(F6): implement method_name`). This ensures granular, traceable history instead of a single monolithic commit per feature
 
 ### For structural tasks (models, schema, wiring):
 - Name the target file explicitly
@@ -219,6 +220,7 @@ If the user specifies a different output path, use that instead.
 7. **Do NOT include Future Expansion items**
 8. **Do NOT include tasks for features other than the one specified**
 9. **Do NOT duplicate test scenarios** — each scenario from § 6 appears in exactly one RED task
+10. **Commit after every GREEN** — each GREEN task must include a commit directive so implementation progress is captured incrementally, not as a single commit at the end
 
 ## Tone
 
