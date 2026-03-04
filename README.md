@@ -43,11 +43,12 @@ The pipeline enforces: **Discovery (optional), then PRD, then spec, then tasks, 
 | `lint-typescript.sh` | PostToolUse (Edit/Write) | Auto-run `biome check` on every file save |
 | `block-protected-files.sh` | PreToolUse (Edit/Write) | Prevent edits to protected files |
 
-### Agents (1)
+### Agents (2)
 
 | Agent | Purpose |
 |-------|---------|
 | `convention-checker` | Check code against project `CONVENTIONS.md` rules |
+| `security-bug-reviewer` | Detect security vulnerabilities and bug patterns with CWE-specialized analysis |
 
 ### Scripts (1)
 

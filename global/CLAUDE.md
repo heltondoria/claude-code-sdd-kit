@@ -49,7 +49,8 @@ This is the global CLAUDE.md for all projects. It provides baseline guidance tha
 
 1. **Instant (hooks)**: ruff S rules on every edit
 2. **Quality gates**: Semgrep local scan (offline)
-3. **CI**: Full SAST, dependency scan, container scan, secret detection (pipeline-components)
+3. **Review (agent)**: `@security-bug-reviewer` — CWE-specialized vulnerability and bug pattern analysis
+4. **CI**: Full SAST, dependency scan, container scan, secret detection (pipeline-components)
 
 ## Conventions
 
@@ -79,6 +80,7 @@ Template available at `~/.claude/templates/CONVENTIONS.md`.
 | Agent | Purpose |
 |-------|---------|
 | `convention-checker` | Check code against project CONVENTIONS.md |
+| `security-bug-reviewer` | Detect security vulnerabilities and bug patterns with CWE-specialized analysis |
 
 ## Git Conventions
 
