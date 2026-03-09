@@ -11,13 +11,13 @@ The pipeline enforces: **Discovery (optional), then PRD, then spec, then tasks, 
 ## Pipeline
 
 ```
-/discovery (optional)  ->  /discovery-review  ->  /prd or /prd-import  ->  /prd-review  ->  /feature-spec  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review  ->  /release
-        (WHY)                                                                      (per feature)                              (TDD RED-GREEN)                                                              (semver)
+/discovery (optional)  ->  /discovery-review  ->  /prd or /prd-import  ->  /prd-review  ->  /feature-spec  ->  /traceability (optional)  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review  ->  /release
+        (WHY)                                                                      (per feature)            (BR/SR cross-refs)                                                  (TDD RED-GREEN)                                                              (semver)
 ```
 
 ## Contents
 
-### Skills (14)
+### Skills (15)
 
 | Skill | Purpose |
 |-------|---------|
@@ -25,9 +25,10 @@ The pipeline enforces: **Discovery (optional), then PRD, then spec, then tasks, 
 | `/discovery-review` | Validate discovery document completeness (6 criteria) |
 | `/prd` | Create a PRD through guided questioning |
 | `/prd-import` | Import an external PRD into the SDD format without content loss |
-| `/prd-review` | Validate PRD completeness (11 criteria) |
+| `/prd-review` | Validate PRD completeness (13 criteria) |
 | `/feature-spec` | Refine a single PRD feature into a detailed implementation spec |
-| `/feature-review` | Review feature spec against quality criteria, PRD alignment, and codebase consistency |
+| `/feature-review` | Validate feature spec quality (9 criteria) against PRD alignment and codebase consistency |
+| `/traceability` | Analyze BR/SR cross-references between PRD and feature specs |
 | `/feature-to-tasks` | Generate TDD-structured task list (RED-GREEN pairs) from a feature spec |
 | `/task-review` | Validate task list quality, TDD structure, and spec coverage |
 | `/quality-gates` | Run all quality checks and report pass/fail |

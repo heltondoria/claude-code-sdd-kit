@@ -22,7 +22,7 @@ This is the global CLAUDE.md for all projects. It provides baseline guidance tha
 ## Development Philosophy
 
 - **Specification-Driven Development (SDD)**: PRD first, then tasks, then TDD implementation
-- **Pipeline**: `/discovery` (optional) -> `/discovery-review` -> `/prd` | `/prd-import` -> `/prd-review` -> `/feature-spec` (per feature) -> `/feature-review` -> `/feature-to-tasks` -> `/task-review` -> implement (TDD with hooks) -> `/quality-gates` -> `/impl-review` -> `/release`
+- **Pipeline**: `/discovery` (optional) -> `/discovery-review` -> `/prd` | `/prd-import` -> `/prd-review` -> `/feature-spec` (per feature) -> `/traceability` (optional) -> `/feature-review` -> `/feature-to-tasks` -> `/task-review` -> implement (TDD with hooks) -> `/quality-gates` -> `/impl-review` -> `/release`
 - **Short, verifiable tasks**: Each task must be deterministic, verifiable, objective, and atomic
 - **TDD**: Write tests alongside or before implementation for early feedback
 - **Strict linting on every edit**: Hooks auto-lint and type-check after every file save
@@ -66,9 +66,10 @@ Template available at `~/.claude/templates/CONVENTIONS.md`.
 | `/discovery-review` | Validate discovery document completeness (6 criteria) |
 | `/prd` | Create PRD through guided questioning |
 | `/prd-import` | Import an external PRD into the SDD format without content loss |
-| `/prd-review` | Validate PRD completeness (11 criteria) |
+| `/prd-review` | Validate PRD completeness (13 criteria) |
 | `/feature-spec` | Refine a single PRD feature into detailed implementation spec |
-| `/feature-review` | Validate feature spec quality (8 criteria) before task generation |
+| `/feature-review` | Validate feature spec quality (9 criteria) before task generation |
+| `/traceability` | Analyze BR/SR cross-references between PRD and feature specs |
 | `/feature-to-tasks` | Generate TDD-structured task list from a feature spec |
 | `/task-review` | Validate task list quality and spec coverage |
 | `/quality-gates` | Run all quality checks and report pass/fail |
