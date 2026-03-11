@@ -13,7 +13,10 @@ The pipeline enforces: **Discovery (optional), then PRD, then spec, then tasks, 
 ```
 /discovery (optional)  ->  /discovery-review  ->  /prd or /prd-import  ->  /prd-review  ->  /feature-spec  ->  /traceability (optional)  ->  /feature-review  ->  /feature-to-tasks  ->  /task-review  ->  implement  ->  /quality-gates  ->  /impl-review  ->  /release
         (WHY)                                                                      (per feature)            (BR/SR cross-refs)                                                  (TDD RED-GREEN)                                                              (semver)
+                                                                          DECISIONS.md maintained ↕
 ```
+
+> `/feature-spec` automatically maintains `.specs/DECISIONS.md` — a compact registry of cross-feature design decisions (shared patterns, models, and interfaces). Each spec session reads previous decisions for consistency and appends its own.
 
 ## Contents
 
