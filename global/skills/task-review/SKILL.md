@@ -61,6 +61,7 @@ For each method in the source document's Internal Interfaces (§ 4), verify:
 - [ ] The GREEN task references "tests from previous task must pass"
 - [ ] No test scenarios from § 6 are missing (every scenario appears in exactly one RED task)
 - [ ] No duplicate test scenarios across RED tasks
+- [ ] **Inline § traceability**: Every task includes at least one `(§ X.Y)` annotation referencing the spec section it derives from. Scenario codes alone (H1, ER4) are insufficient — they must be accompanied by their source section (e.g., `H1, H2 (§ 6.1)`)
 
 **If the task list does NOT use RED-GREEN pairs** (legacy `/prd-to-tasks` format):
 - Report this as a structural finding: "Task list uses implement-then-test pattern. Consider regenerating with `/feature-to-tasks` for TDD structure."
@@ -75,6 +76,7 @@ TDD Structure
   Orphan GREEN tasks (no RED):   Z
   RED-after-GREEN violations:    Z
   Test scenarios covered:        X / Y
+  Tasks with § traceability:     X / Y
 ```
 
 ### 3. Spec/PRD Coverage
